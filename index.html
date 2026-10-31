@@ -178,13 +178,13 @@ document.getElementById("description").textContent=messages[b].replace("{p}",p.v
 const effort=(b==="blocked"||b==="low")?"Но если вы приложите усилия и будете раскачивать и поддерживать свои энергии по этой чакре вы удивитесь как начнут меняться состояние, отношения и даже денежные возможности)":"И если вы приложите немного усилий и будете поддерживать свои энергии по этой чакре вы удивитесь как начнут меняться состояние, отношения и даже денежные возможности)";
 document.getElementById("next").textContent=effort+" Ниже расскажу про 1 из 3 ключевых зон вашей Свадхистаны:";
 const audio=document.getElementById("audio");
-audio.pause();audio.removeAttribute("src");audio.innerHTML="";const source=document.createElement("source");source.src="audio/"+phy+".mp3";source.type="audio/mpeg";audio.appendChild(source);audio.load();audio.playbackRate=Number(document.getElementById("audioSpeed").value);
+audio.pause();audio.removeAttribute("src");audio.innerHTML="";const source=document.createElement("source");source.src=phy+".mp3";source.type="audio/mpeg";audio.appendChild(source);audio.load();audio.playbackRate=Number(document.getElementById("audioSpeed").value);
 document.getElementById("audioStatus").textContent="";
 document.getElementById("result").classList.remove("hidden");
 document.getElementById("result").scrollIntoView({behavior:"smooth"});
 });
 document.getElementById("audioSpeed").addEventListener("change",e=>document.getElementById("audio").playbackRate=Number(e.target.value));
 
-document.getElementById("audio").addEventListener("error",()=>{document.getElementById("audioStatus").textContent="Не удалось загрузить запись. Проверьте, что папка audio загружена рядом с index.html.";});
+document.getElementById("audio").addEventListener("error",()=>{document.getElementById("audioStatus").textContent="Не удалось загрузить запись. Проверьте, что аудиофайл загружен рядом с index.html.";});
 document.getElementById("videoSpeed").addEventListener("change",e=>{document.getElementById("offerVideo").playbackRate=Number(e.target.value)});
 </script></body></html>
